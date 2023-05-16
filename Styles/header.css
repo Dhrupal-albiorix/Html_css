@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+:root {
+  --logo-text: 'Pacifico', cursive;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 10px;
+  align-items: center;
+  background-image: linear-gradient(to right, rgba(203, 109, 203, 0.95), rgba(219, 157, 206, 0.4)), url(../images/AdobeStock_157191812_Preview.jpeg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  clip-path: polygon(0% 0%, 100% 3%, 100% 100%, 0 97%);
+}
+
+.navItems a {
+  text-decoration: none;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .navlogo {
+  font-family: var(--logo-text);
+  cursor: pointer;
+  font-size: 2.53rem;
+  text-transform: capitalize;
+  text-shadow: 1px 1px 1px #fff3f3, 3px 3px 5px rgb(255, 0, 225);
+}
+
+
+.navItems {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  color: #000000;
+  width: 50%;
+}
+
+.navItem {
+  list-style-type: none;
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: bolder;
+  font-family: 'Source Sans Pro',
+    sans-serif;
+  position: relative;
+  /* text-shadow: 2px 2px #ffffff; */
+  text-shadow: 1px 1px 1px #fff3f3, 3px 3px 5px rgb(191, 0, 255);
+
+}
+
+.menu-button-container {
+  display: none;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+
+/*  Creating the menu button */
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+  display: block;
+  background-color: #f00ce9;
+  position: absolute;
+  height: 6px;
+  width: 32px;
+  border-radius: 3px;
+}
+
+.menu-button::before {
+  content: '';
+  margin-top: -8px;
+}
+
+.menu-button::after {
+  content: '';
+  margin-top: 8px;
+}
+
+/*  Adding Functionality to the Hamburger Menu with CSS  */
+#menu-toggle:checked+.menu-button-container .menu-button::before {
+  margin-top: 0px;
+  transform: rotate(5deg);
+}
+
+#menu-toggle:checked+.menu-button-container .menu-button {
+  background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked+.menu-button-container .menu-button::after {
+  margin-top: 0px;
+  /*  transforms the hamburger icon into a cross  */
+  transform: rotate(-45deg);
+}
+
+/* Making the navbar responsive by CSS Media Queries */
+
+
+.main-header-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1%;
+  max-width: 130rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+  align-items: center;
+}
+
+.main-header-left h1 {
+  font-size: 3.2rem;
+  line-height: 1.05;
+  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+  margin-bottom: 3.8rem;
+  letter-spacing: 0.2rem;
+  text-shadow: 1px 1px 1px #fff3f3, 3px 3px 5px rgb(255, 0, 225);
+}
+
+.main-header-left p {
+  font-size: 1.7rem;
+  line-height: 1.6;
+  margin-bottom: 3.8rem;
+  text-transform: capitalize;
+}
+
+.btn2,
+.btn {
+  background-color: rgba(231, 10, 165, 0.95);
+  text-transform: capitalize;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding: 0.96rem 1.4rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.3s;
+  color: #fff;
+  text-shadow: none;
+}
+
+
+.learnBtn {
+  background-color: #fff;
+  color: #333;
+}
+
+.coustmers {
+  display: flex;
+  align-items: center;
+  gap: 2.7rem;
+  margin-top: 3.8rem;
+  margin-bottom: 2rem;
+}
+
+.coustmers img {
+  height: 4.8rem;
+  width: 4.8rem;
+  border-radius: 50%;
+  margin-right: -1.6rem;
+  border: 3px solid #fdf2e9;
+}
+
+.coustmers span {
+  color: rgba(231, 10, 165, 0.95);
+  font-weight: 700;
+}
+
+.coustmers-txt {
+  font-size: 1.5rem;
+}
+
+.main-header-right .img1 {
+  position: absolute;
+  left: 12%;
+  width: 45%;
+}
+
+.main-header-right .img2 {
+  position: absolute;
+  left: 53%;
+  width: 45%;
+}
+
+.main-header-right .img3 {
+  position: absolute;
+  bottom: 2%;
+  left: 30%;
+  width: 45%;
+}
+
+.main-header-right {
+  background-color: olive;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  position: relative;
+}
+
+@media screen and (max-width: 825px) {
+
+  .navlogo div {
+    font-size: medium;
+  }
+
+  .main-header-right .img3 {
+    left: 25%;
+    width: 55%;
+  }
+
+  .main-header-right .img1 {
+    left: 2%;
+    width: 55%;
+  }
+
+  .main-header-right .img2 {
+    left: 43%;
+    width: 55%;
+  }
+
+  .coustmers {
+    gap: 2rem;
+    justify-content: flex-start;
+  }
+
+}
+
+@media screen and (max-width: 750px) {
+  .main-header-details {
+    display: inline-block;
+  }
+
+  .main-header-right {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .menu-button-container {
+    display: flex;
+  }
+
+  .menu {
+    position: absolute;
+    top: 0;
+    margin-top: 80px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  #menu-toggle~.menu a li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 0;
+    overflow: hidden;
+  }
+
+  #menu-toggle:checked~.menu {
+    background-image: linear-gradient(rgba(255, 192, 203, 0.167), rgba(128, 0, 128, 0.39));
+    /* background: transparent; */
+  }
+
+  #menu-toggle:checked~.menu a li {
+    border: 1px solid #9f9a9a;
+    height: 2.5em;
+    padding: 0.5em;
+    width: 100%;
+    display: inline-block;
+  }
+
+  .menu>a li {
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+    padding: 0.5em 0;
+    width: 100%;
+    color: black;
+    background-image: linear-gradient(rgba(255, 192, 203, 0.863), rgba(128, 0, 128, 0.89));
+  }
+
+  .menu>a li:not(:last-child) {
+    border-bottom: 1px solid #444;
+
+  }
+}

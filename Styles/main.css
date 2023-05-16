@@ -1,0 +1,71 @@
+@import "header.css";
+@import "gallery.css";
+@import "card.css";
+@import "price.css";
+@import "form.css";
+@import "footer.css";
+/* to understand difference between body and * applay borader in * and body both. then remove them 
+one after another */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* The body selector has higher priority,
+but the * selector applies more broadly,
+so in <body>foo<p>bar</p></body>the body selector will determine the background of the text foo,
+but the * selector will determine the background of the <p>element. */
+
+/* The wildcard selector (*) selects ALL the elements in your document,
+including tags like html,
+body,p,h1,h2,h3,h4,h5,h6,form,input,button,textarea,select,option,legend,
+fieldset…I won’t list the entire reference,
+but you get the idea. Using the wildcard selector is bad practise in general,
+unless you use it for very few and very specific rules.
+Whereas the body is a little more specific in that you’re actually selecting a tag that\
+can be inherited from. */
+
+html {
+    /* font-size: 10px; */
+    font-size: 62.5%;
+    overflow-x: hidden;
+    /* scroll-behavior: smooth; */
+}
+
+/* media (max-width: 75em) html {
+    font-size: 56.25%;
+} */
+
+body {
+    /* border: 2px solid black; */
+    /* margin: 20px; */
+    font-family: "Rubik", sans-serif;
+}
+
+
+@media screen and (max-width: 915px) {
+    html {
+        /* font-size: 10px; */
+        font-size: 56.25%;
+        overflow-x: hidden;
+        /* scroll-behavior: smooth; */
+    }
+}
+
+@media screen and (max-width: 530px) {
+    html {
+        /* font-size: 10px; */
+        font-size: 46.25%;
+        overflow-x: hidden;
+        /* scroll-behavior: smooth; */
+    }
+}
+
+.container {
+    margin: 2px;
+    /* border: 2px solid rgb(200, 49, 49); */
+}
+
+/* https: //blog.timonwa.com/all-vs-root-vs-html-vs-body-selectors#heading-the-universal-selector */
